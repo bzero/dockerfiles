@@ -30,6 +30,7 @@ for f in "${files[@]}"; do
 		continue
 	fi
 
+echo "$f"
 	image=${f%Dockerfile}
 	base=${image%%\/*}
 	suite=${image##*\/}
