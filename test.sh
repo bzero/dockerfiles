@@ -19,6 +19,7 @@ validate_diff() {
 	fi
 }
 
+
 # get the dockerfiles changed
 IFS=$'\n'
 files=( $(validate_diff --name-only -- '*Dockerfile') )
@@ -30,7 +31,6 @@ for f in "${files[@]}"; do
 		continue
 	fi
 
-echo "$f"
 	image=${f%Dockerfile}
 	base=${image%%\/*}
 	suite=${image##*\/}
